@@ -36,12 +36,13 @@ public class MyStackTest {
         stack.push(3);
 
         // popping elements from the stack
-        assertEquals(Optional.of(3), stack.pop());
-        assertEquals(Optional.of(2), stack.pop());
-        assertEquals(Optional.of(1), stack.pop());
+        assertEquals(3, stack.pop().intValue()); // Here, use intValue() to compare Integer objects
+        assertEquals(2, stack.pop().intValue());
+        assertEquals(1, stack.pop().intValue());
 
         // Assert that the size of the stack is 0 after popping all elements
         assertEquals(0, stack.size());
+
     }
 
 
