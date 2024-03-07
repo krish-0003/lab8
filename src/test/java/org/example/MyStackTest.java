@@ -5,8 +5,7 @@ import java.util.EmptyStackException;
 import java.util.Optional;
 
 import static junit.framework.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.*;
 
 public class MyStackTest {
 
@@ -43,6 +42,32 @@ public class MyStackTest {
         // Assert that the size of the stack is 0 after popping all elements
         assertEquals(0, stack.size());
 
+    }
+
+    @Test
+    public void testIsEmpty() {
+        MyStack<Integer> stack = new MyStack<>();
+
+        assertTrue(stack.isEmpty()); // Stack should be empty initially
+
+        stack.push(55);
+        assertFalse(stack.isEmpty()); // Stack should not be empty after pushing an element into the stack
+
+        stack.pop();
+        assertTrue(stack.isEmpty()); // Stack should be empty after popping all elements form it
+    }
+
+    @Test
+    public void testSize() {
+        MyStack<Integer> stack = new MyStack<>();
+
+        assertEquals(0, stack.size()); // Stack's size should be 0 initially
+
+        stack.push(10);
+        assertEquals(1, stack.size()); // Stack's size should be 1 after pushing an element into the stack
+
+        stack.pop();
+        assertEquals(0, stack.size()); // Stack's size should be 0 after popping all elements form it
     }
 
 

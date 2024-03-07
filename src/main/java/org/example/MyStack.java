@@ -24,9 +24,11 @@ public class MyStack<E> {
         return e;
 
     }
+   // Method to check if the stack is empty
     public boolean isEmpty() {
         return delegate.isEmpty();
     }
+    // Method to get the size of the stack
     public int size() {
         return delegate.size();
     }
